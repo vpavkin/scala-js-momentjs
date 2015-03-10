@@ -13,4 +13,8 @@ object Moment extends js.Object {
   def apply(millis: Double): Date = js.native
 
   def locale(s: String): Unit = js.native
+
+  def duration(millis: Int): Duration = js.native
+  def duration(time: Int, unit: String): Duration = js.native
+  def duration(time: String): Duration = js.native
 }
