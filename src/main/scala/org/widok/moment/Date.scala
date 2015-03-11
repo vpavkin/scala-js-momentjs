@@ -11,4 +11,8 @@ trait Date extends js.Object with Getters with Setters[Date] {
   def startOf(unit: String): Date = js.native
   def endOf(unit: String): Date = js.native
   def calendar(): String = js.native
+  def isBefore(date: Date): Boolean = js.native
+  def isBefore(date: Date, unit: String): Boolean = js.native
+  def isAfter(date: Date): Boolean = js.native
+  def isAfter(date: Date, unit: String): Boolean = js.native
 }
