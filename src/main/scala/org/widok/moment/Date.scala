@@ -1,6 +1,7 @@
 package org.widok.moment
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSName
 
 trait Date extends js.Object with Getters with Setters[Date] {
   def fromNow(): String = js.native
@@ -15,5 +16,8 @@ trait Date extends js.Object with Getters with Setters[Date] {
   def isBefore(date: Date, unit: String): Boolean = js.native
   def isAfter(date: Date): Boolean = js.native
   def isAfter(date: Date, unit: String): Boolean = js.native
-  def diff(date:Date,unit:String=Unit.Millisecond):Duration =js.native
+  def diff(date: Date, unit: String = Unit.Millisecond): Duration = js.native
+
+  @JSName("valueOf")
+  def value(): Double = js.native
 }
