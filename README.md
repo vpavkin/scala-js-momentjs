@@ -1,5 +1,14 @@
 # Moment.js façade for Scala.js
 
+## Installation
+Add the following dependency to your `build.sbt`:
+
+```scala
+libraryDependencies +=
+  "io.github.widok" %%% "scala-js-momentjs" % "0.1.0"
+```
+
+## Example
 ```scala
 import org.widok.moment._
 
