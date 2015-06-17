@@ -12,7 +12,7 @@ organization := "io.github.widok"
 scalaVersion := "2.11.6"
 
 libraryDependencies +=
-  "org.webjars" % "momentjs" % "2.10.2"
+  "org.webjars" % "momentjs" % "2.10.3"
 
 jsDependencies +=
-  "org.webjars" % "momentjs" % "2.10.2" / "moment-with-locales.min.js"
+  "org.webjars" % "momentjs" % "2.10.3" / "moment-with-locales.min.js"
