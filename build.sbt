@@ -1,4 +1,4 @@
-lazy val root = project.in(file(".")).
+lazy val scalaJsMomentJs = project.in(file(".")).
   enablePlugins(ScalaJSPlugin)
 
 name := "Scala.js façade for Moment.js"

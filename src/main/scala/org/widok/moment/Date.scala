@@ -21,6 +21,9 @@ trait Date extends js.Object with Getters with Setters[Date] {
   def isAfter(date: Date, unit: String): Boolean = js.native
   def diff(date: Date): Duration = js.native
   def diff(date: Date, unit: String): Duration = js.native
+  def utcOffset(): Int = js.native
+  def utcOffset(newOffset: String): Int = js.native
+  def utcOffset(newOffset: Int): Int = js.native
 
   @JSName("valueOf")
   def value(): Double = js.native
