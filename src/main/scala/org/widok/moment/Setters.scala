@@ -2,6 +2,7 @@ package org.widok.moment
 
 import scala.scalajs.js
 
+@js.native
 trait Setters[T] extends js.Object {
   def add(time: Int, unit: String): T = js.native
   def add(time: Double, unit: String): T = js.native

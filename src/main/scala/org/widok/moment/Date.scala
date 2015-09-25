@@ -3,6 +3,7 @@ package org.widok.moment
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
 
+@js.native
 trait Date extends js.Object with Getters with Setters[Date] {
   def toDate(): js.Date = js.native
   def toISOString(): String = js.native

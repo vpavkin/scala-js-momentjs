@@ -3,6 +3,7 @@ package org.widok.moment
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
 
+@js.native
 @JSName("moment")
 object Moment extends js.Object {
   def apply(): Date = js.native
