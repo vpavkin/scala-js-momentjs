@@ -4,11 +4,11 @@ import scala.scalajs.js
 
 @js.native
 trait Getters extends js.Object {
-  def milliseconds(): Int = js.native
-  def seconds(): Double = js.native
-  def minutes(): Double = js.native
-  def hours(): Double = js.native
-  def days(): Double = js.native
-  def months(): Double = js.native
-  def years(): Double = js.native
+  def millisecond(): Int = js.native
+  def second(): Double = js.native
+  def minute(): Double = js.native
+  def hour(): Double = js.native
+  def day(): Double = js.native
+  def month(): Double = js.native
+  def year(): Double = js.native
 }
