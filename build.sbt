@@ -5,17 +5,19 @@ name := "Scala.js façade for Moment.js"
 
 normalizedName := "scala-js-momentjs"
 
-version := "0.1.5-SNAPSHOT"
+version := "0.1.6-SNAPSHOT"
 
 organization := "io.github.widok"
 
 scalaVersion := "2.11.7"
 
-libraryDependencies +=
-  "org.webjars" % "momentjs" % "2.10.6"
+libraryDependencies ++= Seq(
+  "org.webjars" % "momentjs" % "2.10.6",
+  "org.webjars" % "moment-timezone" % "0.4.0")
 
-jsDependencies +=
-  "org.webjars" % "momentjs" % "2.10.6" / "moment-with-locales.min.js"
+jsDependencies ++= Seq(
+  "org.webjars" % "momentjs" % "2.10.6" / "moment-with-locales.min.js",
+  "org.webjars" % "moment-timezone" % "0.4.0" / "moment-timezone-with-data.js")
 
 pomExtra :=
   <url>https://github.com/widok/scala-js-momentjs</url>
