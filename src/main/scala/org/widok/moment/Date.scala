@@ -2,7 +2,6 @@ package org.widok.moment
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
-import org.widok.tz._
 
 @js.native
 trait Date extends js.Object with Getters with Setters[Date] {
@@ -34,7 +33,8 @@ trait Date extends js.Object with Getters with Setters[Date] {
   def zone(): Double = js.native
   def zone(b: Double): Date = js.native
 
-  val tz: MomentTimezone = js.native
+  def tz(tz: String): Date = js.native
+  def tz(date: String, format: String, tz: String): Date = js.native
 
   @JSName("valueOf")
   def value(): Double = js.native
