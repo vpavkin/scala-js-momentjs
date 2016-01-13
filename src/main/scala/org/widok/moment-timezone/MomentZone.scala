@@ -4,6 +4,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
 
 @js.native
+@JSName("Zone")
 trait MomentZone extends js.Object {
   var name: String = js.native
   var abbrs: js.Array[String] = js.native
