@@ -11,11 +11,13 @@ organization := "io.github.widok"
 
 scalaVersion := "2.11.7"
 
-libraryDependencies +=
-  "org.webjars" % "moment-timezone" % "0.4.0"
+libraryDependencies ++= Seq(
+  "org.webjars" % "momentjs" % "2.11.1",
+  "org.webjars" % "moment-timezone" % "0.4.0")
 
-jsDependencies +=
-  "org.webjars" % "moment-timezone" % "0.4.0" / "moment-timezone-with-data.js"
+jsDependencies ++= Seq(
+  "org.webjars" % "momentjs" % "2.11.1" / "moment.min.js",
+  "org.webjars" % "moment-timezone" % "0.4.0" / "moment-timezone-with-data.js")
 
 pomExtra :=
   <url>https://github.com/widok/scala-js-momentjs</url>
