@@ -30,11 +30,8 @@ trait Date extends js.Object with Getters with Setters[Date] {
   def utcOffset(): Int = js.native
   def utcOffset(newOffset: String): Int = js.native
   def utcOffset(newOffset: Int): Int = js.native
-  def zone(): Double = js.native
-  def zone(b: Double): Date = js.native
 
   def tz(tz: String): Date = js.native
-  def tz(date: String, format: String, tz: String): Date = js.native
 
   @JSName("valueOf")
   def value(): Double = js.native
