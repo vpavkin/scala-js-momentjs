@@ -9,7 +9,7 @@ version := "0.1.5-SNAPSHOT"
 
 organization := "io.github.widok"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.8"
 
 libraryDependencies ++= Seq(
   "org.webjars" % "momentjs" % "2.12.0",
