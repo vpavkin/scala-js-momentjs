@@ -41,4 +41,7 @@ object Moment extends js.Object {
   def duration(millis: Int): Duration = js.native
   def duration(time: Int, unit: String): Duration = js.native
   def duration(time: String): Duration = js.native
+
+  def weekdaysShort(): js.Array[String] = js.native
+  def weekdaysShort(index: Int): String = js.native
 }
