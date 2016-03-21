@@ -1,7 +1,17 @@
 package org.widok.moment
 
 import scala.scalajs.js
+import scala.scalajs.js.UndefOr
 import scala.scalajs.js.annotation.JSName
+
+@js.native
+trait CalendarOpts extends js.Object {
+  val sameDay: UndefOr[String] = js.native
+  val nextDay: UndefOr[String] = js.native
+  val lastDay: UndefOr[String] = js.native
+  val lastWeek: UndefOr[String] = js.native
+  val sameElse: UndefOr[String] = js.native
+}
 
 @js.native
 trait Date extends js.Object with Getters with Setters[Date] {
@@ -16,6 +26,8 @@ trait Date extends js.Object with Getters with Setters[Date] {
   def startOf(unit: String): Date = js.native
   def endOf(unit: String): Date = js.native
   def calendar(): String = js.native
+  def calendar(reference: Date): String = js.native
+  def calendar(reference: UndefOr[Date], opts: CalendarOpts): String = js.native
   def isBefore(date: Date): Boolean = js.native
   def isBefore(date: Date, unit: String): Boolean = js.native
   def isAfter(date: Date): Boolean = js.native
