@@ -5,7 +5,7 @@ Add the following dependency to your `build.sbt`:
 
 ```scala
 libraryDependencies +=
-  "io.github.widok" %%% "scala-js-momentjs" % "0.1.4"
+  "io.github.widok" %%% "scala-js-momentjs" % "0.1.5"
 ```
 
 ## Example
