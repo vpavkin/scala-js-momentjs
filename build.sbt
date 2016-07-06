@@ -11,7 +11,7 @@ organization := "io.github.widok"
 
 scalaVersion := "2.11.8"
 
-val MomentVersion = "2.12.0"
+val MomentVersion = "2.13.0"
 val MomentTimezoneVersion = "0.5.1"
 
 libraryDependencies ++= Seq(

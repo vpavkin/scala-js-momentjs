@@ -10,4 +10,8 @@ trait Duration extends js.Object with Getters with Setters[Duration] {
 
   @JSName("humanize")
   def humanise(withSuffix: Boolean): String = js.native
+
+  def hours(): Int = js.native
+
+  def minutes(): Int = js.native
 }
