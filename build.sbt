@@ -20,16 +20,20 @@ libraryDependencies ++= Seq(
 
 jsDependencies ++= Seq(
   "org.webjars.npm" % "moment" % MomentVersion
-    / s"$MomentVersion/moment.js" minified "min/moment.min.js",
+    / s"$MomentVersion/moment.js"
+    minified "min/moment.min.js"
+    commonJSName "moment",
 
   "org.webjars.npm" % "moment" % MomentVersion
     / s"moment/$MomentVersion/min/locales.js"
     minified "min/locales.min.js"
+//    commonJSName "moment.locales"
     dependsOn s"$MomentVersion/moment.js",
 
   "org.webjars.npm" % "moment-timezone" % MomentTimezoneVersion
     / "moment-timezone-with-data.js"
     minified "builds/moment-timezone-with-data.min.js"
+//    commonJSName "moment.timezone"
     dependsOn s"moment/$MomentVersion/min/locales.js"
 )
 
