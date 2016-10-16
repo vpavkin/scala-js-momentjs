@@ -30,7 +30,7 @@ trait Date extends js.Object with Getters with Setters[Date] {
   def calendar(reference: UndefOr[Date], opts: CalendarOpts): String = js.native
   def isBefore(date: Date): Boolean = js.native
   def isBefore(date: Date, unit: String): Boolean = js.native
-  def isBetween(m1: Date, m2: Date, units: String = ???, inclusive : String = ???): Boolean = js.native
+  def isBetween(m1: Date, m2: Date, units: String = ???, inclusive: String = ???): Boolean = js.native
   def isAfter(date: Date): Boolean = js.native
   def isAfter(date: Date, unit: String): Boolean = js.native
   def isSame(date: Date): Boolean = js.native
@@ -54,6 +54,16 @@ trait Date extends js.Object with Getters with Setters[Date] {
   def seconds(n: Int): Date = js.native
   def minutes(n: Int): Date = js.native
   def hours(n: Int): Date = js.native
+
+  // direct field setters
+  def millisecond(value: Double): Date = js.native
+  def second(value: Double): Date = js.native
+  def minute(value: Double): Date = js.native
+  def hour(value: Double): Date = js.native
+  def day(value: Double): Date = js.native
+  def month(value: Double): Date = js.native
+  def year(value: Double): Date = js.native
+  def date(value: Double): Date = js.native
 
   @JSName("valueOf")
   def value(): Double = js.native
