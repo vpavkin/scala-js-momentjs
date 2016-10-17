@@ -42,9 +42,9 @@ trait Date extends js.Object with Getters with Setters[Date] {
   def diff(date: Date, unit: String, asFloat: Boolean): Double = js.native
   def local(): Date = js.native
   def utc(): Date = js.native
-  def utcOffset(): Int = js.native
-  def utcOffset(newOffset: String): Int = js.native
-  def utcOffset(newOffset: Int): Int = js.native
+  def utcOffset(): Double = js.native
+  def utcOffset(newOffset: String): Double = js.native
+  def utcOffset(newOffset: Int): Double = js.native
 
   def unix(): Double = js.native
 
