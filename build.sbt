@@ -8,7 +8,7 @@ normalizedName := "scala-js-momentjs"
 
 version := "0.2.1-SNAPSHOT"
 
-organization := "io.github.widok"
+organization := "ru.pavkin"
 
 scalaVersion := "2.11.8"
 
@@ -32,7 +32,7 @@ jsDependencies ++= Seq(
 )
 
 pomExtra :=
-  <url>https://github.com/widok/scala-js-momentjs</url>
+  <url>https://github.com/vpavkin/scala-js-momentjs</url>
   <licenses>
     <license>
       <name>Apache-2.0</name>
@@ -40,12 +40,17 @@ pomExtra :=
     </license>
   </licenses>
   <scm>
-    <url>git://github.com/widok/widok.git</url>
+    <url>git://github.com/vpavkin/scala-js-momentjs.git</url>
   </scm>
   <developers>
     <developer>
       <id>tindzk</id>
       <name>Tim Nieradzik</name>
       <url>http://github.com/tindzk/</url>
+    </developer>
+    <developer>
+      <id>vpavkin</id>
+      <name>Vladimir Pavkin</name>
+      <url>http://github.com/vpavkin/</url>
     </developer>
   </developers>
