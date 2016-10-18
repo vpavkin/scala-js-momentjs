@@ -38,7 +38,7 @@ trait Date extends js.Object with Getters with Setters[Date] {
   def isoWeekday(): Int = js.native
   def isoWeekday(newDay: Int): Date = js.native
   def diff(date: Date): Int = js.native
-  def diff(date: Date, unit: String): Int = js.native
+  def diff(date: Date, unit: String): Double = js.native
   def diff(date: Date, unit: String, asFloat: Boolean): Double = js.native
   def local(): Date = js.native
   def utc(): Date = js.native
