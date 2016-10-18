@@ -1,4 +1,4 @@
-package org.widok.moment
+package moment
 
 object Units {
   val Millisecond = "millisecond"

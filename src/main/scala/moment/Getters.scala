@@ -1,4 +1,4 @@
-package org.widok.moment
+package moment
 
 import scala.scalajs.js
 
