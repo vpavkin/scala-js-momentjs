@@ -7,7 +7,7 @@ Add the following dependency to your `build.sbt`:
 
 ```scala
 libraryDependencies +=
-  "ru.pavkin" %%% "scala-js-momentjs" % "0.3.0"
+  "ru.pavkin" %%% "scala-js-momentjs" % "0.3.1"
 ```
 
 ## Example
@@ -22,7 +22,7 @@ Moment(millis).fromNow()
 ```
 
 ## Versions 0.2.0 and earlier
-If for some reason you want to use version prior to 0.3.0, then use following examples to import and use the facade:
+If for some reason you want to use version prior to 0.3.1, then use following examples to import and use the facade:
 
 ```scala
 libraryDependencies +=
