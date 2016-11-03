@@ -12,7 +12,7 @@ organization := "ru.pavkin"
 
 scalaVersion := "2.11.8"
 
-val MomentVersion = "2.15.1"
+val MomentVersion = "2.15.2"
 val MomentTimezoneVersion = "0.5.5"
 
 libraryDependencies ++= Seq(
