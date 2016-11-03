@@ -6,7 +6,7 @@ name := "Scala.js façade for Moment.js"
 
 normalizedName := "scala-js-momentjs"
 
-version := "0.3.2"
+version := "0.3.3"
 
 organization := "ru.pavkin"
 
