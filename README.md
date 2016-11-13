@@ -35,6 +35,15 @@ import org.widok.moment._
 Moment()
 ```
 
+## Versions of Moment.js
+
+| Facade | Moment.js | Moment-timezone |
+| :-----:|:---------:|:---------------:|
+| 0.4.0  | 2.16.0    | 0.5.9           |
+| 0.3.3  | 2.15.2    | 0.5.5           |
+| 0.3.2  | 2.15.1    | 0.5.5           |
+| 0.3.1  | 2.15.1    | 0.5.5           |
+
 ## License
 This façade is licensed under the terms of the Apache v2.0 license.
 
