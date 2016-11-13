@@ -7,7 +7,7 @@ Add the following dependency to your `build.sbt`:
 
 ```scala
 libraryDependencies +=
-  "ru.pavkin" %%% "scala-js-momentjs" % "0.3.2"
+  "ru.pavkin" %%% "scala-js-momentjs" % "0.4.0"
 ```
 
 ## Example
