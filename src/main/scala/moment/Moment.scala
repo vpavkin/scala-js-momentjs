@@ -44,4 +44,14 @@ object Moment extends js.Object {
 
   def weekdaysShort(): js.Array[String] = js.native
   def weekdaysShort(index: Int): String = js.native
+
+  def tz(millis: Double, zone: String): Date = js.native
+  def tz(arr: js.Array[Int], zone: String): Date = js.native
+  def tz(moment: Date, zone: String): Date = js.native
+  def tz(date: js.Date, zone: String): Date = js.native
+  def tz(string: String, zone: String): Date = js.native
+  def tz(string: String, format: String, zone: String): Date = js.native
+  def tz(string: String, format: String, locale: String, zone: String): Date = js.native
+  def tz(string: String, format: String, strict: Boolean, zone: String): Date = js.native
+  def tz(string: String, format: String, locale: String, strict: Boolean, zone: String): Date = js.native
 }
