@@ -67,4 +67,6 @@ trait Date extends js.Object with Getters with Setters[Date] {
 
   @JSName("valueOf")
   def value(): Double = js.native
+
+  def isDST(): Boolean = js.native
 }
