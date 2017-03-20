@@ -7,7 +7,7 @@ Add the following dependency to your `build.sbt`:
 
 ```scala
 libraryDependencies +=
-  "ru.pavkin" %%% "scala-js-momentjs" % "0.5.1"
+  "ru.pavkin" %%% "scala-js-momentjs" % "0.6.0"
 ```
 
 ## Example
@@ -39,6 +39,7 @@ Moment()
 
 | Facade | Moment.js | Moment-timezone | Scala versions |
 | :-----:|:---------:|:---------------:|:---------------:
+| 0.6.0  | 2.18.0    | 0.5.11          | 2.11.8, 2.12.1 |
 | 0.5.1  | 2.17.1    | 0.5.11          | 2.11.8, 2.12.1 |
 | 0.5.0  | 2.17.1    | 0.5.11          | 2.11.8, 2.12.1 |
 | 0.4.1  | 2.16.0    | 0.5.9           | 2.11.8, 2.12.0 |

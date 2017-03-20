@@ -6,7 +6,7 @@ name := "Scala.js façade for Moment.js"
 
 normalizedName := "scala-js-momentjs"
 
-version := "0.5.1"
+version := "0.6.0"
 
 organization := "ru.pavkin"
 
@@ -14,7 +14,7 @@ scalaVersion := "2.11.8"
 
 crossScalaVersions := Seq("2.11.8", "2.12.1")
 
-val MomentVersion = "2.17.1"
+val MomentVersion = "2.18.0"
 val MomentTimezoneVersion = "0.5.11"
 
 libraryDependencies ++= Seq(
