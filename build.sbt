@@ -6,7 +6,7 @@ name := "Scala.js façade for Moment.js"
 
 normalizedName := "scala-js-momentjs"
 
-version := "0.6.0"
+version := "0.7.0"
 
 organization := "ru.pavkin"
 
@@ -14,12 +14,13 @@ scalaVersion := "2.11.8"
 
 crossScalaVersions := Seq("2.11.8", "2.12.1")
 
-val MomentVersion = "2.18.0"
+val MomentVersion = "2.18.1"
 val MomentTimezoneVersion = "0.5.11"
 
 libraryDependencies ++= Seq(
   "org.webjars.bower" % "moment" % MomentVersion,
-  "org.webjars.bower" % "moment-timezone" % MomentTimezoneVersion)
+  "org.webjars.bower" % "moment-timezone" % MomentTimezoneVersion exclude("org.webjars.bower", "moment")
+)
 
 jsDependencies ++= Seq(
   "org.webjars.bower" % "moment" % MomentVersion
@@ -27,7 +28,7 @@ jsDependencies ++= Seq(
     minified "min/moment-with-locales.min.js"
     commonJSName "moment",
 
-  "org.webjars.bower" % "moment-timezone" % MomentTimezoneVersion
+  ("org.webjars.bower" % "moment-timezone" % MomentTimezoneVersion exclude("org.webjars.bower", "moment"))
     / "moment-timezone-with-data.js"
     minified "builds/moment-timezone-with-data.min.js"
     dependsOn s"moment/$MomentVersion/min/moment-with-locales.js"

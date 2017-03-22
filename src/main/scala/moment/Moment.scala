@@ -1,10 +1,10 @@
 package moment
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSName
+import scala.scalajs.js.annotation.JSGlobal
 
 @js.native
-@JSName("moment")
+@JSGlobal("moment")
 object Moment extends js.Object {
   def apply(): Date = js.native
 
