@@ -54,4 +54,6 @@ object Moment extends js.Object {
   def tz(string: String, format: String, locale: String, zone: String): Date = js.native
   def tz(string: String, format: String, strict: Boolean, zone: String): Date = js.native
   def tz(string: String, format: String, locale: String, strict: Boolean, zone: String): Date = js.native
+
+  def tz: Timezone = js.native
 }
