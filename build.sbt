@@ -1,6 +1,6 @@
 lazy val scalaJsMomentJs = project.in(file(".")).
   enablePlugins(ScalaJSPlugin).
-  settings(jsEnv := NodeJSEnv().value)
+  settings(jsEnv := new org.scalajs.jsenv.nodejs.NodeJSEnv())
 
 name := "Scala.js façade for Moment.js"
 
