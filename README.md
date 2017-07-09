@@ -7,8 +7,10 @@ Add the following dependency to your `build.sbt`:
 
 ```scala
 libraryDependencies +=
-  "ru.pavkin" %%% "scala-js-momentjs" % "0.8.1"
+  "ru.pavkin" %%% "scala-js-momentjs" % "0.9.0"
 ```
+
+**Since 0.9.0 scala-js-momentjs can be used with scalajs-bundler**.
 
 ## Example
 ```scala
@@ -39,6 +41,7 @@ Moment()
 
 | Facade | Moment.js | Moment-timezone | Scala versions |
 | :-----:|:---------:|:---------------:|:---------------:
+| 0.9.0  | 2.18.1    | 0.5.13          | 2.11.11, 2.12.2 |
 | 0.8.*  | 2.18.1    | 0.5.11          | 2.11.11, 2.12.2 |
 | 0.7.0  | 2.18.1    | 0.5.11          | 2.11.8, 2.12.1  |
 | 0.6.0  | 2.18.0    | 0.5.11          | 2.11.8, 2.12.1  |

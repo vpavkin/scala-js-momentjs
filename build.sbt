@@ -1,12 +1,12 @@
 lazy val scalaJsMomentJs = project.in(file(".")).
-  enablePlugins(ScalaJSPlugin).
+  enablePlugins(ScalaJSBundlerPlugin).
   settings(jsEnv := new org.scalajs.jsenv.nodejs.NodeJSEnv())
 
 name := "Scala.js façade for Moment.js"
 
 normalizedName := "scala-js-momentjs"
 
-version := "0.8.1"
+version := "0.9.0"
 
 organization := "ru.pavkin"
 
@@ -14,24 +14,10 @@ scalaVersion := "2.12.2"
 
 crossScalaVersions := Seq("2.11.11", "2.12.2")
 
-val MomentVersion = "2.18.1"
-val MomentTimezoneVersion = "0.5.11"
+val MomentTimezoneVersion = "0.5.13"
 
-libraryDependencies ++= Seq(
-  "org.webjars.bower" % "moment" % MomentVersion,
-  "org.webjars.bower" % "moment-timezone" % MomentTimezoneVersion exclude("org.webjars.bower", "moment")
-)
-
-jsDependencies ++= Seq(
-  "org.webjars.bower" % "moment" % MomentVersion
-    / s"$MomentVersion/min/moment-with-locales.js"
-    minified "min/moment-with-locales.min.js"
-    commonJSName "moment",
-
-  ("org.webjars.bower" % "moment-timezone" % MomentTimezoneVersion exclude("org.webjars.bower", "moment"))
-    / "moment-timezone-with-data.js"
-    minified "builds/moment-timezone-with-data.min.js"
-    dependsOn s"moment/$MomentVersion/min/moment-with-locales.js"
+npmDependencies in Compile ++= Seq(
+  "moment-timezone" -> MomentTimezoneVersion
 )
 
 pomExtra :=
