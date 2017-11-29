@@ -43,3 +43,10 @@ pomExtra :=
         <url>http://github.com/vpavkin/</url>
       </developer>
     </developers>
+
+publishTo := Some(
+  if (isSnapshot.value)
+    Opts.resolver.sonatypeSnapshots
+  else
+    Opts.resolver.sonatypeStaging
+)
