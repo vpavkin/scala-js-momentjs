@@ -3,9 +3,8 @@ package moment
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 
-@JSImport("moment-timezone", JSImport.Namespace, "moment")
 @js.native
-object Moment extends js.Object {
+trait Moment extends js.Object {
   def apply(): Date = js.native
 
   /* Long has different semantics than JavaScript's numbers, therefore Double
@@ -57,3 +56,8 @@ object Moment extends js.Object {
 
   def tz: Timezone = js.native
 }
+
+@JSImport("moment-timezone", JSImport.Namespace, "moment")
+@js.native
+object Moment extends Moment
+
