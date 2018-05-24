@@ -9,6 +9,7 @@ trait Getters extends js.Object {
   def minute(): Int = js.native
   def hour(): Int = js.native
   def day(): Int = js.native
+  def isoWeekday(): Int = js.native
   def month(): Int = js.native
   def year(): Int = js.native
   def date(): Int = js.native
