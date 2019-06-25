@@ -19,6 +19,7 @@ trait Moment extends js.Object {
   def apply(string: String, format: String, locale: String): Date = js.native
   def apply(string: String, format: String, strict: Boolean): Date = js.native
   def apply(string: String, format: String, locale: String, strict: Boolean): Date = js.native
+  def apply(opts: js.Any): Date = js.native
 
   def utc(): Date = js.native
 
@@ -55,6 +56,12 @@ trait Moment extends js.Object {
   def tz(string: String, format: String, locale: String, strict: Boolean, zone: String): Date = js.native
 
   def tz: Timezone = js.native
+
+  def isDate(): Boolean = js.native
+
+  /* Check if a variable is a native js Date object */
+  def isDate(moment: js.Date): Boolean = js.native
+
 }
 
 @JSImport("moment-timezone", JSImport.Namespace, "moment")
