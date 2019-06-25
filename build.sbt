@@ -8,11 +8,9 @@ normalizedName := "scala-js-momentjs"
 
 organization := "ru.pavkin"
 
-scalaVersion := "2.12.4"
+scalaVersion := "2.12.8"
 
-crossScalaVersions := Seq("2.11.11", "2.12.4")
-
-scalaJSLinkerConfig ~= { _.withModuleKind(ModuleKind.CommonJSModule) }
+crossScalaVersions := Seq("2.11.11", "2.12.8", "2.13.0")
 
 scalaJSLinkerConfig ~= {
   _.withModuleKind(ModuleKind.CommonJSModule)
