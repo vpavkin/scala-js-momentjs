@@ -6,20 +6,28 @@ name := "Scala.js façade for Moment.js"
 
 normalizedName := "scala-js-momentjs"
 
-version := "0.9.2"
-
 organization := "ru.pavkin"
 
-scalaVersion := "2.12.4"
+scalaVersion := "2.12.8"
 
-crossScalaVersions := Seq("2.11.11", "2.12.4")
+crossScalaVersions := Seq("2.11.12", "2.12.8", "2.13.0")
 
-scalaJSLinkerConfig ~= { _.withModuleKind(ModuleKind.CommonJSModule) }
+scalaJSLinkerConfig ~= {
+  _.withModuleKind(ModuleKind.CommonJSModule)
+}
 
-val MomentTimezoneVersion = "0.5.14"
-
-npmDependencies in Compile ++= Seq(
+lazy val npmDeps = Seq(
   "moment-timezone" -> MomentTimezoneVersion
+)
+
+npmDependencies in Compile ++= npmDeps
+npmDependencies in Test ++= npmDeps
+
+val MomentTimezoneVersion = "0.5.25"
+val ScalaTestVersion = "3.0.8"
+
+libraryDependencies ++= Seq(
+  "org.scalatest" %%% "scalatest" % ScalaTestVersion % "test"
 )
 
 pomExtra :=
