@@ -8,9 +8,9 @@ normalizedName := "scala-js-momentjs"
 
 organization := "ru.pavkin"
 
-scalaVersion := "2.12.8"
+scalaVersion := "2.12.10"
 
-crossScalaVersions := Seq("2.11.12", "2.12.8", "2.13.0")
+crossScalaVersions := Seq("2.12.10", "2.13.0")
 
 scalaJSLinkerConfig ~= {
   _.withModuleKind(ModuleKind.CommonJSModule)
@@ -24,7 +24,7 @@ npmDependencies in Compile ++= npmDeps
 npmDependencies in Test ++= npmDeps
 
 val MomentTimezoneVersion = "0.5.25"
-val ScalaTestVersion = "3.0.8"
+val ScalaTestVersion = "3.1.0"
 
 libraryDependencies ++= Seq(
   "org.scalatest" %%% "scalatest" % ScalaTestVersion % "test"
