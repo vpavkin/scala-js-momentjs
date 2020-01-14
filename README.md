@@ -1,13 +1,13 @@
 # Moment.js façade for Scala.js
 
-[![Maven Central](https://img.shields.io/maven-central/v/ru.pavkin/scala-js-momentjs_sjs0.6_2.11.svg)](https://github.com/vpavkin/scala-js-momentjs)
+[![Maven Central](https://img.shields.io/maven-central/v/ru.pavkin/scala-js-momentjs_sjs0.6_2.12.svg)](https://github.com/vpavkin/scala-js-momentjs)
 
 ## Installation
 Add the following dependency to your `build.sbt`:
 
 ```scala
 libraryDependencies +=
-  "ru.pavkin" %%% "scala-js-momentjs" % "0.10.0"
+  "ru.pavkin" %%% "scala-js-momentjs" % "0.10.1"
 ```
 
 **Since 0.9.0 scala-js-momentjs can be used with scalajs-bundler**.
@@ -39,8 +39,9 @@ Moment()
 
 ## Versions of Moment.js
 
-| Facade | Moment.js | Moment-timezone | Scala versions |
-| :-----:|:---------:|:---------------:|:---------------:
+| Facade | Moment.js | Moment-timezone | Scala versions | Scala.js version |
+| :-----:|:---------:|:---------------:|:---------------:|:---------------:
+| 0.10.1 | 2.24.0    | 0.5.25          | 2.12.10, 2.13.0| 0.6.31, 1.0.0-RC2|
 | 0.10.0 | 2.24.0    | 0.5.25          | 2.11.12, 2.12.8, 2.13.0| 
 | 0.9.1  | 2.19.2    | 0.5.14          | 2.11.11, 2.12.4 |
 | 0.9.0  | 2.18.1    | 0.5.13          | 2.11.11, 2.12.2 |
