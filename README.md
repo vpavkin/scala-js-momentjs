@@ -1,6 +1,7 @@
 # Moment.js façade for Scala.js
 
 [![Maven Central](https://img.shields.io/maven-central/v/ru.pavkin/scala-js-momentjs_sjs0.6_2.12.svg)](https://github.com/vpavkin/scala-js-momentjs)
+[![Scala.js](https://www.scala-js.org/assets/badges/scalajs-1.0.0-RC2.svg)](https://www.scala-js.org)
 
 ## Installation
 Add the following dependency to your `build.sbt`:
