@@ -24,7 +24,7 @@ npmDependencies in Compile ++= npmDeps
 npmDependencies in Test ++= npmDeps
 
 val MomentTimezoneVersion = "0.5.25"
-val ScalaTestVersion = "3.1.0"
+val ScalaTestVersion = "3.1.1"
 
 libraryDependencies ++= Seq(
   "org.scalatest" %%% "scalatest" % ScalaTestVersion % "test"
