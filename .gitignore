@@ -31,3 +31,4 @@ project/boot/
 .cache
 
 .idea/
+/project/credentials.sbt
