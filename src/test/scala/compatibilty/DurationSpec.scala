@@ -1,9 +1,11 @@
 package compatibilty
 
 import moment.{Moment, Units}
-import org.scalatest.{Assertion, FunSuite, MustMatchers}
+import org.scalatest.Assertion
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.must.Matchers
 
-class DurationSpec extends FunSuite with MustMatchers {
+class DurationSpec extends AnyFunSuite with Matchers {
 
   test("duration humanise without suffix") {
     Moment.duration(1).humanise() mustBe "a few seconds"

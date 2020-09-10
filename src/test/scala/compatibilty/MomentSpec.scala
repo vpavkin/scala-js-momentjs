@@ -1,11 +1,13 @@
 package compatibilty
 
 import moment.{Moment, Units}
-import org.scalatest.{Assertion, FunSuite, MustMatchers}
+import org.scalatest.Assertion
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.must.Matchers
 
 import scala.scalajs.js
 
-class MomentSpec extends FunSuite with MustMatchers {
+class MomentSpec extends AnyFunSuite with Matchers {
 
   test("isDate") {
     Moment.isDate() mustBe false
