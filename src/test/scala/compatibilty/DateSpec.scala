@@ -1,9 +1,10 @@
 package compatibilty
 
 import moment.{Moment, Units}
-import org.scalatest._
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.must.Matchers
 
-class DateSpec extends FunSuite with MustMatchers {
+class DateSpec extends AnyFunSuite with Matchers {
 
   val jsDate: Double = scala.scalajs.js.Date.UTC(2019, 5, 1)
 
@@ -124,7 +125,7 @@ class DateSpec extends FunSuite with MustMatchers {
   test("tz(tz: String): Date") {
     compatAssert(_.tz("Australia/Sydney"))
   }
-  
+
   test("tz(): String") {
     compatAssert(_.tz("Australia/Sydney").tz())
   }
@@ -152,7 +153,7 @@ class DateSpec extends FunSuite with MustMatchers {
   test("minute(value: Double): Date") {
     compatAssert(_.minute(100))
   }
-  
+
   test("hour(value: Double): Date") {
     compatAssert(_.hour(4))
   }
@@ -160,7 +161,7 @@ class DateSpec extends FunSuite with MustMatchers {
   test("day(value: Double): Date") {
     compatAssert(_.day(10))
   }
-  
+
   test("month(value: Double): Date") {
     compatAssert(_.month(5))
   }
@@ -168,7 +169,7 @@ class DateSpec extends FunSuite with MustMatchers {
   test("year(value: Double): Date") {
     compatAssert(_.year(2009))
   }
-  
+
   test("date(value: Double): Date") {
     compatAssert(_.date(30))
   }
@@ -247,5 +248,5 @@ class DateSpec extends FunSuite with MustMatchers {
 
   private def compatAssert[T](t: moment.Date => T) =
     noException should be thrownBy t(Moment(jsDate))
-  
+
 }
