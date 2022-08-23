@@ -32,3 +32,6 @@ project/boot/
 
 .idea/
 /project/credentials.sbt
+
+project/.DS_Store
+src/.DS_Store
