@@ -21,7 +21,7 @@ lazy val npmDeps = Seq(
 npmDependencies in Compile ++= npmDeps
 npmDependencies in Test ++= npmDeps
 
-val MomentTimezoneVersion = "0.5.34"
+val MomentTimezoneVersion = "0.5.35"
 val ScalaTestVersion = "3.2.13"
 
 libraryDependencies ++= Seq(
