@@ -14,15 +14,17 @@ scalaJSLinkerConfig ~= {
   _.withModuleKind(ModuleKind.CommonJSModule)
 }
 
+val MomentVersion = ">=2.29.4"
+val MomentTimezoneVersion = "0.5.35"
+val ScalaTestVersion = "3.2.13"
+
 lazy val npmDeps = Seq(
-  "moment-timezone" -> MomentTimezoneVersion
+  "moment" -> MomentVersion,
+  "moment-timezone" -> MomentTimezoneVersion,
 )
 
 npmDependencies in Compile ++= npmDeps
 npmDependencies in Test ++= npmDeps
-
-val MomentTimezoneVersion = "0.5.35"
-val ScalaTestVersion = "3.2.13"
 
 libraryDependencies ++= Seq(
   "org.scalatest" %%% "scalatest" % ScalaTestVersion % "test",
