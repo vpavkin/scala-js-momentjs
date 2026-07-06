@@ -14,8 +14,8 @@ scalaJSLinkerConfig ~= {
   _.withModuleKind(ModuleKind.CommonJSModule)
 }
 
-val MomentVersion = ">=2.29.4"
-val MomentTimezoneVersion = "0.5.40"
+val MomentVersion = ">=2.30.1"
+val MomentTimezoneVersion = "0.6.2"
 val ScalaTestVersion = "3.2.15"
 
 lazy val npmDeps = Seq(
