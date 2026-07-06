@@ -1,3 +1,5 @@
+import ReleaseTransformations._
+
 lazy val scalaJsMomentJs = project.in(file(".")).
   enablePlugins(ScalaJSBundlerPlugin).
   settings(jsEnv := new org.scalajs.jsenv.nodejs.NodeJSEnv())
@@ -8,7 +10,7 @@ normalizedName := "scala-js-momentjs"
 
 organization := "ru.pavkin"
 
-scalaVersion := "2.13.10"
+scalaVersion := "2.13.18"
 
 scalaJSLinkerConfig ~= {
   _.withModuleKind(ModuleKind.CommonJSModule)
@@ -16,7 +18,7 @@ scalaJSLinkerConfig ~= {
 
 val MomentVersion = ">=2.30.1"
 val MomentTimezoneVersion = "0.6.2"
-val ScalaTestVersion = "3.2.15"
+val ScalaTestVersion = "3.2.20"
 
 lazy val npmDeps = Seq(
   "moment" -> MomentVersion,
@@ -56,9 +58,27 @@ pomExtra :=
       </developer>
     </developers>
 
-publishTo := Some(
-  if (isSnapshot.value)
-    Opts.resolver.sonatypeSnapshots
-  else
-    Opts.resolver.sonatypeStaging
+ThisBuild / sonatypeCredentialHost := xerial.sbt.Sonatype.sonatypeCentralHost
+
+publishTo := {
+  if (isSnapshot.value) Some(Resolver.sonatypeCentralSnapshots)
+  else localStaging.value
+}
+
+releasePublishArtifactsAction := PgpKeys.publishSigned.value
+
+releaseProcess := Seq[ReleaseStep](
+  checkSnapshotDependencies,
+  inquireVersions,
+  runClean,
+  runTest,
+  setReleaseVersion,
+  commitReleaseVersion,
+  tagRelease,
+  publishArtifacts,
+  setNextVersion,
+  commitNextVersion,
+  releaseStepCommand("sonatypeBundleClean"),
+  releaseStepCommand("sonatypeBundleRelease"),
+  pushChanges
 )
