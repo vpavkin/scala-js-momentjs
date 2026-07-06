@@ -1,3 +1,5 @@
+import ReleaseTransformations._
+
 lazy val scalaJsMomentJs = project.in(file(".")).
   enablePlugins(ScalaJSBundlerPlugin).
   settings(jsEnv := new org.scalajs.jsenv.nodejs.NodeJSEnv())
@@ -62,3 +64,21 @@ publishTo := {
   if (isSnapshot.value) Some(Resolver.sonatypeCentralSnapshots)
   else localStaging.value
 }
+
+releasePublishArtifactsAction := PgpKeys.publishSigned.value
+
+releaseProcess := Seq[ReleaseStep](
+  checkSnapshotDependencies,
+  inquireVersions,
+  runClean,
+  runTest,
+  setReleaseVersion,
+  commitReleaseVersion,
+  tagRelease,
+  publishArtifacts,
+  setNextVersion,
+  commitNextVersion,
+  releaseStepCommand("sonatypeBundleClean"),
+  releaseStepCommand("sonatypeBundleRelease"),
+  pushChanges
+)
