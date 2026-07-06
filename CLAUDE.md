@@ -13,7 +13,7 @@ Everything goes through sbt (sbt 1.12.x, Scala 2.13, Scala.js 1.22.0):
 - `sbt compile` — compile
 - `sbt test` — run all tests (compiles to JS and runs under Node.js; requires Node installed, scalajs-bundler installs npm deps automatically)
 - `sbt "testOnly compatibilty.MomentSpec"` — run a single test suite (note the package is spelled `compatibilty`, not `compatibility`)
-- `sbt release` — publish a release via sbt-release/sbt-sonatype (requires PGP key and Sonatype credentials in `project/credentials.sbt`, which is not checked in)
+- `sbt release` — cut a release: bumps versions, tags, and pushes; the `v*` tag push triggers `.github/workflows/release.yml`, which signs and publishes to Sonatype Central (secrets: `SONATYPE_USERNAME`, `SONATYPE_PASSWORD`, `PGP_SECRET`, `PGP_PASSPHRASE`)
 
 ## Architecture
 
@@ -29,7 +29,7 @@ Everything goes through sbt (sbt 1.12.x, Scala 2.13, Scala.js 1.22.0):
 
 ## CI
 
-GitHub Actions (`.github/workflows/ci.yml`) runs `sbt clean test` on pushes to master and on pull requests (JDK 17, Node 20).
+GitHub Actions (`.github/workflows/ci.yml`) runs `sbt clean test` on pushes to master/maintenance branches and on pull requests (JDK 17, Node 20). `.github/workflows/release.yml` publishes to Sonatype Central on `v*` tag pushes.
 
 ## Versioning
 
