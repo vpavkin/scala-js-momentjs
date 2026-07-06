@@ -8,7 +8,7 @@ normalizedName := "scala-js-momentjs"
 
 organization := "ru.pavkin"
 
-scalaVersion := "2.13.10"
+scalaVersion := "2.13.18"
 
 scalaJSLinkerConfig ~= {
   _.withModuleKind(ModuleKind.CommonJSModule)
@@ -16,7 +16,7 @@ scalaJSLinkerConfig ~= {
 
 val MomentVersion = ">=2.30.1"
 val MomentTimezoneVersion = "0.6.2"
-val ScalaTestVersion = "3.2.15"
+val ScalaTestVersion = "3.2.20"
 
 lazy val npmDeps = Seq(
   "moment" -> MomentVersion,
