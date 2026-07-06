@@ -60,6 +60,8 @@ pomExtra :=
 
 ThisBuild / sonatypeCredentialHost := xerial.sbt.Sonatype.sonatypeCentralHost
 
+ThisBuild / versionScheme := Some("early-semver")
+
 publishTo := {
   if (isSnapshot.value) Some(Resolver.sonatypeCentralSnapshots)
   else localStaging.value
@@ -76,9 +78,8 @@ releaseProcess := Seq[ReleaseStep](
   commitReleaseVersion,
   tagRelease,
   publishArtifacts,
+  releaseStepCommand("sonatypeBundleRelease"),
   setNextVersion,
   commitNextVersion,
-  releaseStepCommand("sonatypeBundleClean"),
-  releaseStepCommand("sonatypeBundleRelease"),
   pushChanges
 )
