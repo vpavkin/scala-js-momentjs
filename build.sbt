@@ -56,9 +56,9 @@ pomExtra :=
       </developer>
     </developers>
 
-publishTo := Some(
-  if (isSnapshot.value)
-    Opts.resolver.sonatypeSnapshots
-  else
-    Opts.resolver.sonatypeStaging
-)
+ThisBuild / sonatypeCredentialHost := xerial.sbt.Sonatype.sonatypeCentralHost
+
+publishTo := {
+  if (isSnapshot.value) Some(Resolver.sonatypeCentralSnapshots)
+  else localStaging.value
+}
