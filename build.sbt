@@ -64,7 +64,7 @@ ThisBuild / versionScheme := Some("early-semver")
 
 publishTo := {
   if (isSnapshot.value) Some(Resolver.sonatypeCentralSnapshots)
-  else localStaging.value
+  else sonatypePublishToBundle.value
 }
 
 releasePublishArtifactsAction := PgpKeys.publishSigned.value
@@ -78,7 +78,7 @@ releaseProcess := Seq[ReleaseStep](
   commitReleaseVersion,
   tagRelease,
   publishArtifacts,
-  releaseStepCommand("sonatypeBundleRelease"),
+  releaseStepCommand("sonatypeCentralRelease"),
   setNextVersion,
   commitNextVersion,
   pushChanges
