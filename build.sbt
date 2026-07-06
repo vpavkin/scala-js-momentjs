@@ -67,8 +67,11 @@ publishTo := {
   else sonatypePublishToBundle.value
 }
 
-releasePublishArtifactsAction := PgpKeys.publishSigned.value
+pgpPassphrase := sys.env.get("PGP_PASSPHRASE").map(_.toArray)
 
+/* Publishing happens in CI: `sbt release` only bumps versions and pushes
+ * the v* tag, which triggers .github/workflows/release.yml
+ */
 releaseProcess := Seq[ReleaseStep](
   checkSnapshotDependencies,
   inquireVersions,
@@ -77,8 +80,6 @@ releaseProcess := Seq[ReleaseStep](
   setReleaseVersion,
   commitReleaseVersion,
   tagRelease,
-  publishArtifacts,
-  releaseStepCommand("sonatypeCentralRelease"),
   setNextVersion,
   commitNextVersion,
   pushChanges
