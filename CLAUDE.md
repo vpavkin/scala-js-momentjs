@@ -8,9 +8,10 @@ A Scala.js façade (typed bindings) for Moment.js and moment-timezone, published
 
 ## Commands
 
-Everything goes through sbt (sbt 1.12.x, Scala 2.13, Scala.js 1.22.0):
+Everything goes through sbt (sbt 1.12.x, Scala.js 1.22.0), cross-built for Scala 2.13 and Scala 3 (`crossScalaVersions` in `build.sbt`). Scala 3 is built with 3.3.x — the previous LTS, kept deliberately so 3.3+ consumers can use the artifact (3.9 LTS output is unreadable by 3.3):
 
 - `sbt compile` — compile
+- `sbt +test` — run all tests on every Scala version (`sbt test` runs only the default 2.13; `sbt ++3.3.8 test` for Scala 3)
 - `sbt test` — run all tests (compiles to JS and runs under Node.js; requires Node installed, scalajs-bundler installs npm deps automatically)
 - `sbt "testOnly compatibilty.MomentSpec"` — run a single test suite (note the package is spelled `compatibilty`, not `compatibility`)
 - `sbt release` — cut a release: bumps versions, tags, and pushes; the `v*` tag push triggers `.github/workflows/release.yml`, which signs and publishes to Sonatype Central (secrets: `SONATYPE_USERNAME`, `SONATYPE_PASSWORD`, `PGP_SECRET`, `PGP_PASSPHRASE`)
@@ -29,8 +30,8 @@ Everything goes through sbt (sbt 1.12.x, Scala 2.13, Scala.js 1.22.0):
 
 ## CI
 
-GitHub Actions (`.github/workflows/ci.yml`) runs `sbt clean test` on pushes to master/maintenance branches and on pull requests (JDK 17, Node 20). `.github/workflows/release.yml` publishes to Sonatype Central on `v*` tag pushes.
+GitHub Actions (`.github/workflows/ci.yml`) runs `sbt ++<scala> clean test` for each Scala version in a matrix on pushes to master/maintenance branches and on pull requests (JDK 17, Node 20). `.github/workflows/release.yml` publishes all Scala versions (`+publishSigned`) to Sonatype Central on `v*` tag pushes.
 
 ## Versioning
 
-Version lives in `version.sbt` (managed by sbt-release). When bumping the pinned `moment`/`moment-timezone` npm versions in `build.sbt`, update the compatibility table in `README.md`.
+Version lives in `version.sbt` (managed by sbt-release). When bumping the pinned `moment`/`moment-timezone` npm versions in `build.sbt`, update the compatibility table in `README.md`. Adding a Scala version is additive (patch bump under `early-semver`); dropping one is breaking (minor bump in 0.x). Keep the CI matrix in `ci.yml` in sync with `crossScalaVersions`.

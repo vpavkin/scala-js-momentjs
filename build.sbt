@@ -10,7 +10,12 @@ normalizedName := "scala-js-momentjs"
 
 organization := "ru.pavkin"
 
-scalaVersion := "2.13.18"
+val Scala213 = "2.13.18"
+val Scala3 = "3.3.8"
+
+scalaVersion := Scala213
+
+crossScalaVersions := Seq(Scala213, Scala3)
 
 scalaJSLinkerConfig ~= {
   _.withModuleKind(ModuleKind.CommonJSModule)
@@ -72,6 +77,8 @@ pgpPassphrase := sys.env.get("PGP_PASSPHRASE").map(_.toArray)
 /* Publishing happens in CI: `sbt release` only bumps versions and pushes
  * the v* tag, which triggers .github/workflows/release.yml
  */
+releaseCrossBuild := true
+
 releaseProcess := Seq[ReleaseStep](
   checkSnapshotDependencies,
   inquireVersions,

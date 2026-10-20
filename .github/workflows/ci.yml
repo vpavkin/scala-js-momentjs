@@ -7,7 +7,12 @@ on:
 
 jobs:
   test:
+    name: Test (Scala ${{ matrix.scala }})
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        scala: ["2.13.18", "3.3.8"]
     steps:
       - uses: actions/checkout@v4
 
@@ -24,4 +29,4 @@ jobs:
           node-version: 20
 
       - name: Compile and test
-        run: sbt clean test
+        run: sbt ++${{ matrix.scala }} clean test

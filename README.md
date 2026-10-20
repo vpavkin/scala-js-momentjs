@@ -4,7 +4,7 @@
 [![Scala.js](https://www.scala-js.org/assets/badges/scalajs-1.0.0.svg)](https://www.scala-js.org)
 
 ## Installation
-Add the following dependency to your `build.sbt`:
+Add the following dependency to your `build.sbt` (published for Scala 2.13 and Scala 3):
 
 ```scala
 libraryDependencies +=
@@ -42,6 +42,7 @@ Moment()
 
 |     Facade      | Moment.js | Moment-timezone |     Scala versions     | Scala.js version  |
 |:---------------:|:---------:|:---------------:|:----------------------:|:-----------------:
+|     0.10.11     | >=2.30.1    |      0.6.2      |        2.13, 3         |      1.22.0       |
 |     0.10.10     | >=2.30.1    |      0.6.2      |          2.13          |      1.22.0       |
 |     0.10.9      | >=2.29.4    |     0.5.40      |          2.13          |      1.12.0       |
 |     0.10.8      | 2.22.2      |     0.5.35      |          2.13          |      1.10.1       |
